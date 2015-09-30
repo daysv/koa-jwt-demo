@@ -1,7 +1,7 @@
 module.exports = {
     NAME: '',
     LOGGER: {
-        LEVEL: '' // 日志记录等级
+        LEVEL: ''
     },
     KOA: {
         PORT: 80
