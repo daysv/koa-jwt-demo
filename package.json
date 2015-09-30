@@ -1,0 +1,20 @@
+{
+  "name": "koa-jwt-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daysv",
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^5.0.5",
+    "koa": "^1.0.0",
+    "koa-bodyparser": "^2.0.1",
+    "koa-mount": "^1.3.0",
+    "koa-router": "^5.2.1",
+    "log4js": "^0.6.27",
+    "node-uuid": "^1.4.3"
+  }
+}
