@@ -10,16 +10,16 @@ var bodyparser = require('koa-bodyparser');
 
 app.name = CONFIG.NAME;
 
-// ÈÕÖ¾¼ÇÂ¼
+// æ—¥å¿—è®°å½•
 log4js.loadAppender('file');
 log4js.addAppender(log4js.appenders.file('logs/info.log'));
 global.log = log4js.getLogger();
 log.setLevel(CONFIG.LOGGER.LEVEL);
 
-// ¼ÇÂ¼¼þ
+// è®°å½•ä»¶
 app.use(require('./modules/logger'));
 
-//´íÎó´¦Àí
+//é”™è¯¯å¤„ç†
 app.use(function *(next) {
     try {
         yield next;
@@ -43,7 +43,7 @@ app.use(bodyparser({
     }
 }));
 
-// Â·ÓÉ
+// è·¯ç”±
 app.use(mount('/api', require('./routes/authentication')));
 app.use(mount('/api', require('./routes/token')));
 
@@ -60,5 +60,5 @@ process.on('uncaughtException', (err) => {
 app.listen(CONFIG.KOA.PORT, ()=> {
     log.info('Listen on ' + CONFIG.KOA.PORT);
     log.info('This platform is ' + process.arch + ' ' + process.platform + ' pid:' + process.pid + ', node version ' + process.version);
-    log.info('Starting time: ' + process.uptime() +'s');
+    log.info('Starting time: ' + process.uptime() + 's');
 });

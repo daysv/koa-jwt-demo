@@ -6,7 +6,7 @@ var TOKEN = require('../config').TOKEN;
 var uuid = require('node-uuid');
 
 /**
- * 刷新令牌,以refreshToken获取新的accessToken
+ * 鍒锋柊浠ょ墝,浠efreshToken鑾峰彇鏂扮殑accessToken
  */
 router.post('/token', function *() {
     var refreshToken = this.request.body.refreshToken;

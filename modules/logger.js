@@ -12,9 +12,9 @@ module.exports = function *(next) {
     yield next;
     var ms = new Date - start;
     var status = this.response.status;
-    if(status <400){
+    if (status < 400) {
         log.info('%s %s %s - %sms', this.method, this.response.status, this.url, ms);
-    }else{
+    } else {
         log.warn('%s %s %s - %sms', this.method, this.response.status, this.url, ms);
     }
 };

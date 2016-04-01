@@ -7,18 +7,18 @@ var TOKEN = require('../config').TOKEN;
 var uuid = require('node-uuid');
 
 /**
- * 令牌权限验证
+ * 浠ょ墝鏉冮檺楠岃瘉
  */
 router.get('/authentication', function *() {
     var username = (yield auth()).username;
     this.body = {
-        status:'success',
-        username :username
+        status: 'success',
+        username: username
     }
 });
 
 /**
- * 用户登录
+ * 鐢ㄦ埛鐧诲綍
  */
 router.post('/authentication', function *() {
     var username = this.request.body.username;

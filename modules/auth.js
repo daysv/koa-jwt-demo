@@ -2,11 +2,11 @@ var cert = require('../config').TOKEN.ACCESS.KEY;
 var jwt = require('jsonwebtoken');
 
 /**
- * È¨ÏŞÈÏÖ¤
- * ĞèÒªÇëÇó±íÍ·¸½´ø Authorization: Bearer <token> ĞÅÏ¢½øĞĞÈ¨ÏŞÈÏÖ¤
+ * æƒé™è®¤è¯
+ * éœ€è¦è¯·æ±‚è¡¨å¤´é™„å¸¦ Authorization: Bearer <token> ä¿¡æ¯è¿›è¡Œæƒé™è®¤è¯
  */
-module.exports = () =>{
-    return function* (next) {
+module.exports = () => {
+    return function*(next) {
         var header = this.header;
         if (header) {
             var parts = header.authorization.split(' ');
@@ -29,9 +29,9 @@ module.exports = () =>{
         } catch (err) {
             return this.throw(401, 'Incorrect token');
         }
-        if(typeof next === 'object'){
+        if (typeof next === 'object') {
             return yield next;
-        }else{
+        } else {
             return yield decoded;
         }
     };
